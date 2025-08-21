@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_flutter_simple_app/match_details.dart';
 import 'package:flutter/material.dart';
 import 'firebase_options.dart';
 
@@ -115,6 +116,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 trailing: const Icon(Icons.arrow_forward_rounded, size: 24),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => MatchDetailsScreen(match: liveScore),
+                    ),
+                  );
+                },
               );
             },
           );
